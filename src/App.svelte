@@ -1,6 +1,8 @@
 <script>
 	import StarRating from './StarRating.svelte';
-	let rating = 5;
+	let rating = 3;
+
+	// $: console.log('[App] Rating is', rating);
 </script>
 
 <label>
