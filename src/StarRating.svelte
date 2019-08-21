@@ -1,4 +1,8 @@
 <script>
+  import Icon from 'fa-svelte';
+  import { faStar as starIcon } from '@fortawesome/free-solid-svg-icons/faStar';
+  import { faStar as emptyStarIcon } from '@fortawesome/free-regular-svg-icons/faStar';
+
   export let rating = 0;
   export let maxRating = 5;
 
@@ -20,5 +24,6 @@
 </script>
 
 {#each stars as { rating, full }}
-  <span>{full ? 'F' : 'E' }</span>
+  <!-- <i class="{full ? 'fas' : 'far'} fa-star"></i> -->
+  <Icon icon={full ? starIcon : emptyStarIcon}></Icon>
 {/each}
