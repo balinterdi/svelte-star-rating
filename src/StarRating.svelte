@@ -14,7 +14,7 @@
   $: stars = numbers.map((n, i) => { 
     return {
       rating: i+1,
-      full: Math.round(rating + 1) >= i+1
+      full: Math.round(rating) >= i+1
     }
   });
 
