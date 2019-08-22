@@ -5,6 +5,7 @@
 
   export let rating = 0;
   export let maxRating = 5;
+  export let onChange = () => {};
 
   let numbers = [];
   for (let i=1; i < maxRating+1; i++) {
@@ -23,7 +24,9 @@
   // }
 </script>
 
-{#each stars as { rating, full }}
+{#each stars as { rating: r, full }}
   <!-- <i class="{full ? 'fas' : 'far'} fa-star"></i> -->
-  <Icon icon={full ? starIcon : emptyStarIcon}></Icon>
+  <button type="button" on:click={() => onChange(r)}>
+    <Icon icon={full ? starIcon : emptyStarIcon}></Icon>
+  </button>
 {/each}
