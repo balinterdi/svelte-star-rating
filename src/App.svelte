@@ -2,13 +2,19 @@
 	import StarRating from './StarRating.svelte';
 	let rating = 3;
 
-	// $: console.log('[App] Rating is', rating);
 	function updateRating(newRating) {
-		rating = newRating;
+		update(newRating);
 	}
 
 	function updateRatingFromEvent(event) {
-		rating = event.target.value;
+		update(event.target.value);
+	}
+
+	function update(newRating) {
+		if (rating === newRating) {
+			newRating = 0;
+		}
+		rating = newRating;
 	}
 </script>
 
