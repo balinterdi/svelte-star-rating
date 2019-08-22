@@ -24,6 +24,20 @@
   // }
 </script>
 
+<style>
+  button {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  button + button {
+    margin-left: .1rem;
+  }
+</style>
+
 {#each stars as { rating: r, full }}
   <!-- <i class="{full ? 'fas' : 'far'} fa-star"></i> -->
   <button type="button" on:click={() => onChange(r)}>
